@@ -1,0 +1,185 @@
+
+:root {
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --container-bg: #fff;
+    --item-bg: #fff;
+    --item-border: #e0e0e0;
+    --button-primary: #4caf50;
+    --button-danger: #f44336;
+    --button-edit: #2196f3;
+    --input-bg: #fff;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    --container-bg: #1e1e1e;
+    --item-bg: #2d2d2d;
+    --item-border: #3d3d3d;
+    --button-primary: #388e3c;
+    --button-danger: #d32f2f;
+    --button-edit: #1976d2;
+    --input-bg: #2d2d2d;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--container-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--item-border);
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+button {
+    padding: 0.75rem 1rem;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.add-btn {
+    background-color: var(--button-primary);
+    border-radius: 0 4px 4px 0;
+}
+
+.task-list {
+    list-style-type: none;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--item-bg);
+    border: 1px solid var(--item-border);
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+}
+
+.task-text {
+    flex: 1;
+    word-break: break-word;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 1rem;
+}
+
+.complete-btn {
+    background-color: var(--button-primary);
+    border-radius: 4px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-btn {
+    background-color: var(--button-edit);
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.delete-btn {
+    background-color: var(--button-danger);
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.mode-toggle {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.toggle-btn {
+    background-color: #333;
+    color: white;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dark-mode .toggle-btn {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.empty-list {
+    text-align: center;
+    padding: 1rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .task-buttons {
+        margin-left: 0;
+        margin-top: 0.75rem;
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
